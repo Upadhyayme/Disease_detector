@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel  = "stylesheet" href="Symptoms.css">
+    <title>Skin Disease Symptom Analyzer</title>
+     
+</head>
+<body>
+    <div class="container">
+        <h1>Skin Disease Symptom Analyzer</h1>
+        
+        <div class="symptom-section">
+            <p>Select the symptoms you're experiencing to receive a preliminary assessment of potential skin conditions.</p>
+            
+            <div class="symptom-container">
+                <div class="symptom-group">
+                    <div class="symptom-title">Appearance</div>
+                    <div class="symptom-options">
+                        <input type="checkbox" id="symptom-red" class="symptom-checkbox" value="red">
+                        <label for="symptom-red" class="symptom-label">Redness</label>
+                        
+                        <input type="checkbox" id="symptom-bumps" class="symptom-checkbox" value="bumps">
+                        <label for="symptom-bumps" class="symptom-label">Bumps/Pimples</label>
+                        
+                        <input type="checkbox" id="symptom-dry" class="symptom-checkbox" value="dry">
+                        <label for="symptom-dry" class="symptom-label">Dry/Flaky</label>
+                        
+                        <input type="checkbox" id="symptom-scaly" class="symptom-checkbox" value="scaly">
+                        <label for="symptom-scaly" class="symptom-label">Scaly Patches</label>
+                        
+                        <input type="checkbox" id="symptom-blisters" class="symptom-checkbox" value="blisters">
+                        <label for="symptom-blisters" class="symptom-label">Blisters</label>
+                        
+                        <input type="checkbox" id="symptom-swelling" class="symptom-checkbox" value="swelling">
+                        <label for="symptom-swelling" class="symptom-label">Swelling</label>
+                        
+                        <input type="checkbox" id="symptom-itchy" class="symptom-checkbox" value="itchy">
+                        <label for="symptom-itchy" class="symptom-label">Itchiness</label>
+                        
+                        <input type="checkbox" id="symptom-pain" class="symptom-checkbox" value="pain">
+                        <label for="symptom-pain" class="symptom-label">Pain/Burning</label>
+                        
+                        <input type="checkbox" id="symptom-circular" class="symptom-checkbox" value="circular">
+                        <label for="symptom-circular" class="symptom-label">Circular Pattern</label>
+                        
+                        <input type="checkbox" id="symptom-oily" class="symptom-checkbox" value="oily">
+                        <label for="symptom-oily" class="symptom-label">Oily/Greasy</label>
+                    </div>
+                </div>
+                
+                <div class="symptom-group">
+                    <div class="symptom-title">Location</div>
+                    <select id="location-select" class="location-select">
+                        <option value="">Select location on body</option>
+                        <option value="face">Face</option>
+                        <option value="scalp">Scalp</option>
+                        <option value="neck">Neck</option>
+                        <option value="chest">Chest</option>
+                        <option value="back">Back</option>
+                        <option value="arms">Arms</option>
+                        <option value="hands">Hands</option>
+                        <option value="legs">Legs</option>
+                        <option value="feet">Feet</option>
+                        <option value="joints">Joints (elbows, knees)</option>
+                        <option value="groin">Groin Area</option>
+                        <option value="widespread">Widespread/Multiple Areas</option>
+                    </select>
+                </div>
+                
+                <div class="symptom-group">
+                    <div class="symptom-title">Duration</div>
+                    <select id="duration-select" class="duration-select">
+                        <option value="">Select how long you've had symptoms</option>
+                        <option value="days">Few days</option>
+                        <option value="weeks">Few weeks</option>
+                        <option value="months">Few months</option>
+                        <option value="years">Several years or chronic</option>
+                    </select>
+                </div>
+                
+                <div class="symptom-group">
+                    <div class="symptom-title">Additional Symptoms</div>
+                    <div class="symptom-options">
+                        <input type="checkbox" id="symptom-fever" class="symptom-checkbox" value="fever">
+                        <label for="symptom-fever" class="symptom-label">Fever</label>
+                        
+                        <input type="checkbox" id="symptom-fatigue" class="symptom-checkbox" value="fatigue">
+                        <label for="symptom-fatigue" class="symptom-label">Fatigue</label>
+                        
+                        <input type="checkbox" id="symptom-spreading" class="symptom-checkbox" value="spreading">
+                        <label for="symptom-spreading" class="symptom-label">Spreading Over Time</label>
+                        
+                        <input type="checkbox" id="symptom-bleeding" class="symptom-checkbox" value="bleeding">
+                        <label for="symptom-bleeding" class="symptom-label">Bleeding When Scratched</label>
+                    </div>
+                </div>
+                
+                <div class="symptom-group">
+                    <div class="symptom-title">Additional Information</div>
+                    <textarea id="additional-info" class="additional-input" rows="3" placeholder="Any other symptoms or relevant information..."></textarea>
+                </div>
+                
+                <button id="analyze-btn" class="analyze-btn">Analyze Symptoms</button>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            <p>Analyzing symptoms...</p>
+            <div class="spinner"></div>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <h2>Possible Conditions</h2>
+            
+            <div id="matches-container">
+                <!-- Matches will be inserted here -->
+            </div>
+            
+            <div id="condition-details" class="condition-details" style="display: none;">
+                <h3 id="condition-name"></h3>
+                
+                <div class="result-section">
+                    <h3>Description:</h3>
+                    <p id="condition-description"></p>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Possible Causes:</h3>
+                    <p id="condition-causes"></p>
+                </div>
+                
+                <div class="result-section">
+                    <h3>Recommended Treatment:</h3>
+                    <p id="condition-treatment"></p>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Important Disclaimer:</strong> This is a preliminary assessment only based on the symptoms you've provided. Please consult a qualified dermatologist or healthcare provider for proper diagnosis and treatment. Self-medication can be dangerous.</p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>How to use this tool:</h3>
+            <ol>
+                <li>Select all symptoms that apply to your skin condition</li>
+                <li>Specify the location and duration of symptoms</li>
+                <li>Add any additional relevant information</li>
+                <li>Click "Analyze Symptoms" to get potential matches</li>
+                <li>Review the possible conditions and their details</li>
+                <li>Consult with a healthcare professional for proper diagnosis and treatment</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script src="Symptoms.js"></script>
+</body>
+</html>  

@@ -1,0 +1,199 @@
+
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            color: #1e40af;
+            margin-bottom: 0.75rem;
+        }
+        
+        h3 {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+        
+        /* Symptom Selector Section */
+        .symptom-section {
+            margin-bottom: 2rem;
+        }
+        
+        .symptom-container {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .symptom-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .symptom-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+        
+        .symptom-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .symptom-checkbox {
+            display: none;
+        }
+        
+        .symptom-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #f3f4f6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .symptom-checkbox:checked + .symptom-label {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .location-select, .duration-select, .additional-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .analyze-btn {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s;
+            display: block;
+            width: 100%;
+        }
+        
+        .analyze-btn:hover {
+            background-color: #059669;
+        }
+        
+        /* Results Section */
+        .loading {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e5e7eb;
+            border-top: 5px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            background-color: #eff6ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-section {
+            margin-bottom: 1.25rem;
+        }
+        
+        .condition-match {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #d1d5db;
+        }
+        
+        .condition-match-percentage {
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .condition-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #d1d5db;
+        }
+        
+        .disclaimer {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .disclaimer p {
+            color: #92400e;
+            margin-bottom: 0;
+        }
+        
+        /* Instructions */
+        .instructions {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .instructions ol {
+            padding-left: 1.5rem;
+            margin-top: 0.75rem;
+            color: #4b5563;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
